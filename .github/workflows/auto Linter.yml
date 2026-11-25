@@ -1,0 +1,18 @@
+# Goal : Whenever someone changes the python code, the linter will check the syntax, indentation format is correct or not.
+name: Auto Linter
+
+on:
+  push:
+    paths: "*.py"
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      # This step will automatically clone the code of current branch into runner
+      - name: Checkout/Clone the code
+        uses: action/checkout@v7
+      # This step will install the Linting tool
+      - name: Install Linter
+        run: pip install ruf
+  
