@@ -1,4 +1,4 @@
-# testing the Auto Linter.
+# testing the Auto Linter
 from flask import Flask, render_template
 app = Flask(__name__)
 
