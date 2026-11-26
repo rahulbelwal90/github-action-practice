@@ -1,0 +1,20 @@
+# Goal : the goal is to create docker image
+name: CI
+
+on: 
+  push:
+    branches: [master]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: action/checkot@v7
+
+      - name: Docker Setup [Login to Docker Hub]
+        uses: ddocker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
