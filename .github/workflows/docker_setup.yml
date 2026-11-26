@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: action/checkot@v7
+        uses: actions/checkot@v7
 
       - name: Docker Setup [Login to Docker Hub]
         uses: ddocker/login-action@v4
