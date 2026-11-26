@@ -9,8 +9,15 @@ jobs:
   code-lint:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
+     # This step will automatically clone the code of current branch into runner
+      - name: Checkout/Clone the code
         uses: actions/checkout@v7
+      # This step will install the Linting tool
+      - name: Install Linter
+        run: pip install ruff
+      # This step will run Linter
+      - name: Check the file for linting
+        run: ruff check .
         
   
   build-and-push:
